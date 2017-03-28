@@ -20,7 +20,7 @@ class Db
         return $res;
     }
 
-    public function query($sql, $class)
+    public function query($sql, $class = stdClass::class)
     {
         $sth = $this->dbh->prepare($sql);
         $res = $sth->execute();
