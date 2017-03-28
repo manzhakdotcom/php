@@ -1,6 +1,8 @@
 <?php
 
-class Singleton {
+namespace App;
+
+trait Singleton {
 
 	
 
