@@ -4,4 +4,8 @@ require __DIR__ . '/autoload.php';
 
 $users = \App\Models\User::findAll();
 
-var_dump($users);
+function getName(\App\Models\User $user, $message) {
+	echo $user->first_name;
+}
+
+getName($users[2], '');
