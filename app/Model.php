@@ -20,15 +20,25 @@ abstract class Model
     		return;
     	}
 
-    	var_dump($this);
+    	$columns = [];
+    	$values = [];
 
     	foreach ($this as $key => $value) {
-    		echo "\n" . $key . "\n";
-    	}
+            if ('id' == $key) {
+                continue;
+            } else {
+                $columns[] = $key;
+                $values[':' . $key] = $value;
+            }
 
-    	die;
+        }
 
-    	$sql = 'INSERT INTO ' . static::TABLE . ' ';
+
+    	$sql = 'INSERT INTO ' . static::TABLE .' ('. implode(', ', $columns) . ') VALUES ('. implode(', ', array_keys($values)) . ')';
+
+        $db = Db::instance();
+
+        $db->execute($sql, $values);
     }
 
     public static function findAll()
