@@ -1,11 +1,9 @@
 <?php
 
+use App\Models\User;
+
 require __DIR__ . '/autoload.php';
 
-$users = \App\Models\User::findAll();
+$users = new User;
 
-function getName(\App\Models\User $user, $message) {
-	echo $user->first_name;
-}
-
-getName($users[2], '');
+$users->insert();
