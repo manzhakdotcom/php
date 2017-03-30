@@ -2,6 +2,10 @@
 
 require __DIR__ . '/autoload.php';
 
-$users = \App\Models\User::findAll();
+$view = new \App\View();
 
-include_once __DIR__ . '/app/templates/index.php';
+$view->title = 'My site!';
+$view->users = \App\Models\User::findAll();
+
+
+$view->display(__DIR__ . '/app/templates/index.php');
