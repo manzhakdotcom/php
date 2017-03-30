@@ -5,7 +5,7 @@ namespace App;
 /**
 * 
 */
-class View {
+class View implements \Countable {
 
 	protected $display;
 
@@ -35,6 +35,11 @@ class View {
 		ob_end_clean();
 
 		return $content;
+	}
+
+	public function count(){
+		
+		return count($this->display);
 	}
 
 
