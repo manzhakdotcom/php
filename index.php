@@ -5,10 +5,10 @@ require __DIR__ . '/autoload.php';
 $view = new \App\View();
 
 $view->title = 'My site!';
-$view->dicr = 'The site about news!';
 $view->users = \App\Models\User::findAll();
+$view->authors = \App\Models\Author::findAll();
 
-var_dump($view->count());
+$view->news = \App\Models\News::findAll();
 
 
 $view->display(__DIR__ . '/app/templates/index.php');
