@@ -1,1 +1,4 @@
-console.log('Work');
+var oldlog = console.log;
+console.log = function(x){oldlog(x);return ""};
+console.log("Hello");
+

@@ -8,8 +8,4 @@ class News extends Model
 {
 	const TABLE = 'news';
 
-	public function getNews($id)
-	{
-		echo 'News!';
-	}
 }
