@@ -30,6 +30,9 @@ class View implements \Countable {
 	*/
 	public function render($template) {		
 		ob_start();
+        foreach ($this->display as $prop => $value) {
+            $$prop = $value;
+        }
 		include $template;
 		$content = ob_get_contents();
 		ob_end_clean();

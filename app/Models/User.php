@@ -6,7 +6,7 @@ use App\Model;
 
 class User extends Model
 {
-    const TABLE = 'users';
+    const TABLE = 'user';
 
     public $first_name;
     public $last_name;
