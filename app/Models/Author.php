@@ -11,8 +11,4 @@ class Author extends Model
 
 	public $name;
 
-	public function getAuthor($id)
-	{
-		echo 'Author';
-	}
 }
