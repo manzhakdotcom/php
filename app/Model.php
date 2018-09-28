@@ -49,6 +49,6 @@ abstract class Model
     public static function findById($id)
     {
         $db = Db::instance();
-        return $db->query( 'SELECT * FROM ' . static::TABLE . 'WHERE id=:id', static::class, [':id' => $id] )[0];
+        return $db->query( 'SELECT * FROM ' . static::TABLE . ' WHERE id=:id', static::class, [':id' => $id])[0];
     }
 }

@@ -4,8 +4,6 @@ namespace App;
 
 trait Singleton {
 
-	
-
 	protected static $instance;
 
 	protected function __construct(){}
