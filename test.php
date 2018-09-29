@@ -1,8 +1,12 @@
 <?php
-$pot = 0;
-foreach (array_reverse(str_split(decbin(error_reporting()))) as $bit) {
-    if ($bit == 1) {
-        echo array_search(pow(2, $pot), get_defined_constants(true)['Core']). "<br>\n";
-    }
-    $pot++;
-}
+
+$sql = "CREATE TABLE `php.users` ( 
+        `id` INT(10) NOT NULL AUTO_INCREMENT, 
+        `first_name` VARCHAR(100) NOT NULL, 
+        `last_name` VARCHAR(100) NOT NULL, 
+        `age` INT(10) NOT NULL, 
+        PRIMARY KEY (`id`)
+        ) 
+        ENGINE = innoDB 
+        CHARSET = utf8 
+        COLLATE utf8_general_ci";
