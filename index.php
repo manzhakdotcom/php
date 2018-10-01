@@ -8,7 +8,7 @@ $view->title = 'My site!';
 $view->users = \App\Models\User::findAll();
 $view->authors = \App\Models\Author::findAll();
 $view->news = \App\Models\News::findAll();
-$view->data = get_data();
+$view->data = new \App\Data()::get_data();
 
 $view->display(__DIR__ . '/app/templates/index.php');
 

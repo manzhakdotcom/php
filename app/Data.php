@@ -9,17 +9,21 @@ class Data
 
     public function __construct($post)
     {
-        $this->data = $post;
+        if (isset($_POST['data']) && !empty($_POST['data'])){
+            $this->data = $_POST['data'];
+        }
     }
 
     public function get_data()
     {
-        if (isset($this->data['data']) && !empty($this->data['data'])){
-            $bad_words = array('fuck', 'dick');
-            $hide_words = array('f**k', 'd**k');
-            $data = $this->data['data'];
-            $data = str_replace($bad_words, $hide_words, $data);
-            $view->data = $data;
-        }
+        return $this->data;
+    }
+
+    public function get_clean_data()
+    {
+        $bad_words = array('fuck', 'dick');
+        $hide_words = array('f**k', 'd**k');
+        return str_replace($bad_words, $hide_words, $this->get_data());
+
     }
 }
