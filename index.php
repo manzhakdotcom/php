@@ -2,6 +2,14 @@
 
 require __DIR__ . '/autoload.php';
 
+function test($a,...$args) {
+    echo $a;
+    return $args;
+}
+
+var_dump(test(6, 7, 45));
+die();
+
 $view = new \App\View();
 
 $view->title = 'My site!';

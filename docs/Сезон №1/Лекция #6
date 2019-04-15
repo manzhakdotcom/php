@@ -1,0 +1,7 @@
+def test(*args, **kargs)
+{
+    kargs[''] 
+}
+
+var_damp(test);
+
